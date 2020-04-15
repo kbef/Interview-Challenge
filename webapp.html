@@ -5,11 +5,17 @@
         <title>Interview Test</title>
         <script src="script.js"></script>
         <link rel="stylesheet" href="imageGrid.css" type=""/>
+        <script src="https://kit.fontawesome.com/096e34c40f.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <input type="text" id = "search" placeholder="Enter Keyword">
-        <button onclick="SearchImages()">Search</button>
-        <div id="imagelist" class="gallery-wrapper">
+        <div class = "search-box">
+            <input class = "search-text" type="text" id = "search" placeholder="Enter Keyword">
+            <a class="search-btn" href = "#" onclick="SearchImages()">
+                <i class="fas fa-search"></i>
+            </a>
+        </div>
+    
+        <div id="imagelist" >
             
         </div>
     </body>
