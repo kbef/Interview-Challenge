@@ -21,9 +21,18 @@ function SearchImages(){
                 listItem.src = source;
                 listItem.height = '300';
                 listItem.width = '300';
+                listItem.onclick = (function() {SetBackground(this)});
                 myDiv.append(listItem);
             });
 
         });
         
+}
+
+function SetBackground(img){
+
+
+    var urlString = 'url(' + img.src + ')';
+    document.getElementById("mainBd").style.backgroundImage = urlString;
+
 }
