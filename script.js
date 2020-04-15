@@ -5,38 +5,25 @@ function SearchImages(){
     //let url = "https://api.unsplash.com/search/photos?page=1&query=office";
 
     //API request
-
-    /*loadJSON(url, dataRecieve, jsonp);
-    console.log(data);
-
-    data.results.forEach(photo => {
-        let res = `
-               <img src="${photo.urls.regular}">
-               <a href="${photo.links.download}">
-        `;
-        document.getElementById("result"). append(res);
-    });*/
-
-
     fetch(url)
         .then(function(data){
             return data.json();
         })
-        .then(function(data){
-            console.log(data); // Log to see 
+        // appending pictures recieved to the HTML file
+        .then(function(data){ 
+            console.log(data); 
+            const myDiv = document.getElementById("imagelist");
+
             data.results.forEach(photo => {
-                let res = `
-                       <img src="${photo.urls.regular}"></img>
-                       <a href="${photo.links.download}">
-                `;
-                document.getElementById("result").append(res);
+                let listItem = document.createElement('img');
+                let source = photo.urls.regular;
+                console.log(source);
+                listItem.src = source;
+                listItem.height = '300';
+                listItem.width = '300';
+                myDiv.append(listItem);
             });
+
         });
         
-}
-
-function dataRecieve(data){
-
-
-
 }
