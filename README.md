@@ -1,4 +1,5 @@
 # Interview-Challenge
+## Put the .css, .html, and .js files in the same folder and open the html file
 2-4 hour challenge:
 
 Build a web based image picking tool using the unsplash.com API.
