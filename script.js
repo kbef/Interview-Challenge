@@ -10,6 +10,7 @@ function SearchImages(){
             return data.json();
         })
         // appending pictures recieved to the HTML file
+        
         .then(function(data){ 
             console.log(data); 
             const myDiv = document.getElementById("imagelist");
@@ -29,10 +30,17 @@ function SearchImages(){
         
 }
 
+//function setting background
 function SetBackground(img){
 
+    var check;
 
-    var urlString = 'url(' + img.src + ')';
-    document.getElementById("mainBd").style.backgroundImage = urlString;
+    check = confirm("Do you want to set this image as background?");
+
+    if(check == true){
+        var urlString = 'url(' + img.src + ')';
+        document.getElementById("mainBd").style.backgroundImage = urlString;
+    }
+    
 
 }
